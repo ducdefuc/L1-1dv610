@@ -62,3 +62,43 @@ async function getCountries() {
     console.log(error.message)
   }
 }
+
+document.querySelector('#guessButton').addEventListener('click', handleGuessResponse) // Event handler for button (Users answer in game)
+
+// Check users answer.
+function handleGuessResponse() {
+  const userAnswerElement = document.querySelector('input[name="guess"]:checked')
+
+  if (userAnswerElement) {
+    const userResponse = userAnswerElement.value
+
+    if (userResponse === 'yes') {
+      alert('I guessed it I win!')
+      location.reload()
+    } else {
+      // if user answers guess random country
+      guessRandomCountry()
+    }
+  }
+}
+
+// Random country picker.
+async function guessRandomCountry() {
+  try {
+    const data = await getCountries()
+
+    // Generate a random index between 0 and the length of the countries data
+    const randomIndex = Math.floor(Math.random() * data.length)
+
+    // Use the index to select a country from the data
+    const randomCountry = data[randomIndex]
+
+    const countryGuessDiv = document.querySelector('#countryGuess')
+    countryGuessDiv.textContent = `Is your name from ${randomCountry.name.common}? ${randomCountry.flag}`
+
+
+  }
+  catch (error) {
+    console.log(error.message)
+  }
+}
