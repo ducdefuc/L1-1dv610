@@ -1,6 +1,7 @@
 const nameForm = document.querySelector('#nameForm')
 nameForm.addEventListener('submit', greet)
 
+// Greet user upon entering name.
 function greet(event) {
     event.preventDefault()
 
@@ -15,13 +16,15 @@ function greet(event) {
     document.querySelector('#permissionQuestion').style.display = 'block'
 }
 
-document.querySelector('#permissionButton').addEventListener('click', askIfPlay)
+document.querySelector('#permissionButton').addEventListener('click', askIfPlay) // Eventhandler for button (users answer).
 
+// Ask if user would like to play a game.
 function askIfPlay(event) {
     event.preventDefault()
     
-    const userResponseElement = document.querySelector('input[name="guessPermission"]:checked')
+    const userResponseElement = document.querySelector('input[name="guessPermission"]:checked') // Radiobuttons.
 
+    // Check if user has selected an option
     if (userResponseElement) {
         const userResponse = userResponseElement.value
 
