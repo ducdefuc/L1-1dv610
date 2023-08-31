@@ -1,0 +1,63 @@
+body {
+  padding: 20px;
+  background-color: rgb(16, 115, 154);
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: rgb(61, 235, 61);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(105, 64, 23)
+}
+
+#greetOutput {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(105, 64, 23)
+}
+
+#gameOutput {
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(105, 64, 23)
+}
+
+form,
+div {
+  margin: 20px;
+}
+
+input[type="text"],
+input[type="submit"],
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+input[type="submit"],
+button {
+  background-color: rgb(28, 117, 225);
+  color: white;
+  border: none;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+img {
+  height: 350px;
+  display: block;
+  margin: 0 auto;
+}
